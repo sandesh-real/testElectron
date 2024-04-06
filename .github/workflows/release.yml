@@ -1,0 +1,32 @@
+name: Release
+
+on: push
+
+jobs:
+  release:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+      - name: test
+        run: echo ${{ secrets.GITHUB_TOKEN }}
+      - name: Build project
+        run: npm run build
+
+      - name: Make Windows release
+        run: npm run make:win
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Semantic Release
+        run: npx semantic-release
+     
