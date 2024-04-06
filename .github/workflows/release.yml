@@ -18,8 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-      - name: test
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+    
       - name: Build project
         run: npm run build
 
