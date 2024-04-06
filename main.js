@@ -49,6 +49,7 @@ ipcMain.on("onLoad", (event) => {
   autoUpdater.checkForUpdates();
   mainWindow.showMessage(`Checking for updates-${app.getVersion()}`);});
 
+/* New Update Available */
 /*New Update Available*/
 autoUpdater.on("update-available", (info) => {
   mainWindow.showMessage(`Update available-${app.getVersion()}`);
