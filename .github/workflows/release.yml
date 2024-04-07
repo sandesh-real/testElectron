@@ -22,10 +22,11 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Semantic Release
+        run: npx semantic-release --extra withhold-publications=false
       - name: Make Windows release
         run: npm run make:win
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      - name: Semantic Release
-        run: npx semantic-release --extra withhold-publications=false
      
+  
