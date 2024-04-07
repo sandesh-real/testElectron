@@ -10,9 +10,11 @@ jobs:
       pull-requests: write
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
 
@@ -22,11 +24,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Semantic Release
-        run: npx semantic-release --extra withhold-publications=false
       - name: Make Windows release
         run: npm run make:win
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Semantic Release
+        run: npx semantic-release 
      
-  
