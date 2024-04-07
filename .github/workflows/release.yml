@@ -27,5 +27,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Semantic Release
-        run: npx semantic-release
+        run: npx semantic-release --extra withhold-publications=false
      
