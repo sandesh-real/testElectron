@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sandeshReal/testElectron.git"
+    "url": "git+https://github.com/sandesh-real/testElectron.git"
   },
   "bugs": {
-    "url": "https://github.com/sandeshReal/testElectron"
+    "url": "https://github.com/sandesh-real/testElectron"
   },
-  "homepage": "https://github.com/sandeshReal/testElectron#readme",
+  "homepage": "https://github.com/sandesh-real/testElectron#readme",
 
   "publish": {
     "provider": "github",
