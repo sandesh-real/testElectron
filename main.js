@@ -50,7 +50,6 @@ ipcMain.on("onLoad", (event) => {
   mainWindow.showMessage(`Checking for updates-${app.getVersion()}`);});
 
 
-/*New Update Available*/
 autoUpdater.on("update-available", (info) => {
   mainWindow.showMessage(`Update available-${app.getVersion()}`);
   // let pth = autoUpdater.downloadUpdate();
