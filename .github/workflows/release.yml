@@ -16,16 +16,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: 20
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
     
       - name: Build project
         run: npm run build
 
       - name: Make Windows release
-        run: npm run make:win
+        run: npm run make:win 
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Semantic Release
